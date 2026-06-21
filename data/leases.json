@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "active": true,
+      "area": "123 Main St",
+      "neighborhood": "Belvedere",
+      "description": "4 bed 2 bath",
+      "rent": "$3000",
+      "available": "September 1",
+      "photo": "/assets/images/wemax-nova-ultra-short-throw-4k-uhd-laser-projector-l176fgn_fa26f3b8-955f-4dec-a3b7-90a14f71a96b.8ed56ad1ba7937042e753df5f5b36472.png",
+      "tags": [
+        "Furnished",
+        "Walk"
+      ]
+    }
+  ]
+}
