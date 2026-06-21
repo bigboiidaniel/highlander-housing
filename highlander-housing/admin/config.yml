@@ -4,7 +4,7 @@ backend:
 
 site_url: https://thunderous-palmier-f879e5.netlify.app
 
-media_folder: "assets/images"
+media_folder: "highlander-housing/assets/images"
 public_folder: "/assets/images"
 
 collections:
@@ -14,7 +14,7 @@ collections:
 
       - label: "Full-Year Leases"
         name: "leases"
-        file: "data/leases.json"
+        file: "highlander-housing/data/leases.json"
         format: "json"
         fields:
           - label: "Leases"
@@ -34,7 +34,7 @@ collections:
 
       - label: "Subleases & Short-Term"
         name: "subleases"
-        file: "data/subleases.json"
+        file: "highlander-housing/data/subleases.json"
         format: "json"
         fields:
           - label: "Subleases"
