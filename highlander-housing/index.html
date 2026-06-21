@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highlander Housing — UCR Off-Campus Housing Marketplace</title>
+  <meta name="description" content="The organized marketplace for UCR off-campus housing. Browse listings, find roommates, and connect with landlords near UC Riverside. 1,900+ members. Free to browse.">
+  <meta name="keywords" content="UCR off campus housing, UCR student housing, UC Riverside housing, UCR apartments, UCR houses for rent, UCR subleases, UCR roommate finder">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" style="color:white">
+        <circle cx="50" cy="50" r="47" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 63L50 17L88 63" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="70" y="27" width="7" height="17" rx="1" fill="currentColor"/>
+        <path d="M20 70L38 47L50 59L64 40L82 70" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="nav-logo-text">Highlander Housing</span>
+    </a>
+    <div class="nav-links">
+      <a href="listings.html" class="nav-link">Listings</a>
+      <a href="subleases.html" class="nav-link">Subleases</a>
+      <a href="roommates.html" class="nav-link">Roommates</a>
+      <a href="parents.html" class="nav-link">For Parents</a>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-toggle">For Owners ▾</span>
+        <div class="nav-dropdown-menu">
+          <a href="list-property.html">List Your Property</a>
+          <a href="investors.html">Investors</a>
+        </div>
+      </div>
+      <a href="resources.html" class="nav-link">Resources</a>
+      <a href="about.html" class="nav-link">About</a>
+    </div>
+    <a href="https://discord.gg/YEFmgVtf9A" class="btn btn-gold nav-cta">Join Discord</a>
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="listings.html">Listings</a>
+  <a href="subleases.html">Subleases</a>
+  <a href="roommates.html">Roommates</a>
+  <a href="parents.html">For Parents</a>
+  <a href="list-property.html">List Your Property</a>
+  <a href="investors.html">Investors</a>
+  <a href="resources.html">Resources</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="https://discord.gg/YEFmgVtf9A" class="btn btn-gold">Join the Discord</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-mark" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="47" stroke="white" stroke-width="1.5"/>
+      <path d="M12 63L50 17L88 63" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="70" y="27" width="7" height="17" rx="1" fill="white"/>
+      <path d="M20 70L38 47L50 59L64 40L82 70" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">UCR Student Housing Community</div>
+      <h1>UCR Off-Campus Housing.<br><em>Made Easier.</em></h1>
+      <p class="hero-desc">
+        The organized marketplace for UCR students, parents, and property owners. Browse listings, find roommates, and connect with landlords — all in one place.
+      </p>
+      <div class="hero-actions">
+        <a href="https://discord.gg/YEFmgVtf9A" class="btn btn-gold btn-lg">Join the Discord →</a>
+        <a href="listings.html" class="btn btn-outline-white btn-lg">Browse Listings</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-item">1,900+ community members</span>
+        <span class="hero-trust-item">300+ students housed this season</span>
+        <span class="hero-trust-item">Free to browse</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-number">1,900+</div>
+        <div class="stat-label">Community Members</div>
+      </div>
+      <div>
+        <div class="stat-number">300+</div>
+        <div class="stat-label">Students Housed This Season</div>
+      </div>
+      <div>
+        <div class="stat-number">Weekly</div>
+        <div class="stat-label">Listing Updates</div>
+      </div>
+      <div>
+        <div class="stat-number">UCR</div>
+        <div class="stat-label">Founded by a UCR Graduate</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Who We Serve</div>
+      <h2 class="section-title">What are you looking for?</h2>
+      <p class="section-desc">Highlander Housing connects UCR students, parents, property owners, and investors in one organized community.</p>
+    </div>
+    <div class="audience-grid">
+      <a href="listings.html" class="audience-card">
+        <div class="audience-icon ai-blue">🎓</div>
+        <h3>I'm a Student</h3>
+        <p>Browse available houses, rooms, subleases, and ADUs near UCR. Get photos, full details, and landlord contact through Discord.</p>
+        <span class="card-link">Find Housing →</span>
+      </a>
+      <a href="parents.html" class="audience-card">
+        <div class="audience-icon ai-gold">👨‍👩‍👧</div>
+        <h3>I'm a Parent</h3>
+        <p>Understand UCR off-campus housing — lease types, timelines, costs, and how to help your student find a safe, organized place.</p>
+        <span class="card-link">Read the Parent Guide →</span>
+      </a>
+      <a href="list-property.html" class="audience-card">
+        <div class="audience-icon ai-green">🏠</div>
+        <h3>I Own a Property</h3>
+        <p>Reach 1,900+ UCR students and parents actively looking for housing. A more targeted audience than Zillow or Facebook.</p>
+        <span class="card-link">List Your Property →</span>
+      </a>
+      <a href="investors.html" class="audience-card">
+        <div class="audience-icon ai-purple">📈</div>
+        <h3>I'm an Investor</h3>
+        <p>Explore off-market student rental opportunities near UCR. Access deal flow, rental demand data, and trusted local vendors.</p>
+        <span class="card-link">Investor Opportunities →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Simple Process</div>
+      <h2 class="section-title">How it works for students</h2>
+      <p class="section-desc">Finding housing near UCR shouldn't mean scrolling through Facebook groups and Craigslist hoping something is still available.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Browse listings</h3>
+        <p>See what's currently available near UCR — full-year leases, rooms, subleases, and ADUs. No account required to browse.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Join the Discord</h3>
+        <p>Get access to photos, full property details, move-in timelines, and direct landlord contact inside the Highlander Housing server.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Connect and secure</h3>
+        <p>Message landlords directly, coordinate with potential roommates, and get your place locked in before it's gone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED LISTINGS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="section-label">Current Inventory</div>
+        <h2 class="section-title">Available Near UCR</h2>
+        <p class="section-desc">Join the Discord for photos, full addresses, and landlord contact.</p>
+      </div>
+      <a href="listings.html" class="btn btn-outline">View All Listings →</a>
+    </div>
+        <div class="listings-grid" id="featuredGrid"><p class="text-muted t-sm" style="grid-column:1/-1;text-align:center;padding:2rem;">Loading...</p></div>
+      <div class="listing-card">
+        <div class="listing-img">🏘️<span class="listing-badge">Full Lease</span></div>
+        <div class="listing-body">
+          <div class="listing-area">Shady Grove Area</div>
+          <div class="listing-name">6 BR / 3 BA — Student House</div>
+          <div class="listing-price">$5,250<span>/mo</span></div>
+          <div class="listing-meta">
+            <span class="listing-meta-item">📅 Sept 1</span>
+            <span class="listing-meta-item">🚶 Walk to UCR</span>
+          </div>
+          <div class="listing-tags">
+            <span class="listing-tag">Walk to Campus</span>
+            <span class="listing-tag">6 Bedrooms</span>
+          </div>
+          <a href="contact.html" class="listing-cta">Join Discord for Details</a>
+        </div>
+      </div>
+      <div class="listing-card">
+        <div class="listing-img">🏠<span class="listing-badge sublease">Sublease</span></div>
+        <div class="listing-body">
+          <div class="listing-area">Spruce Area</div>
+          <div class="listing-name">2 BR / 1 BA — Furnished ADU</div>
+          <div class="listing-price">$799<span>/mo</span></div>
+          <div class="listing-meta">
+            <span class="listing-meta-item">📅 Now → Aug 31</span>
+          </div>
+          <div class="listing-tags">
+            <span class="listing-tag">Fully Furnished</span>
+            <span class="listing-tag">Biweekly Housekeeping</span>
+          </div>
+          <a href="contact.html" class="listing-cta">Join Discord for Details</a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center t-sm text-muted" style="margin-top:1.5rem;">Listings update regularly. Full details, photos, and landlord contact inside the Discord.</p>
+  </div>
+</section>
+
+<!-- WHY DISCORD -->
+<section class="discord-section">
+  <div class="container">
+    <div class="discord-inner">
+      <div>
+        <div class="section-label" style="color:var(--c-gold-l)">Why Discord</div>
+        <h2 style="font-family:var(--font-d);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.15;margin-bottom:.875rem;">The live hub for UCR housing.</h2>
+        <p style="color:rgba(255,255,255,.65);font-size:1.0625rem;line-height:1.7;max-width:460px;">
+          Unlike a static website or scattered Facebook posts, the Highlander Housing Discord is where listings get posted, photos get shared, and landlords actually respond — in real time.
+        </p>
+        <div class="discord-features">
+          <div class="discord-feature"><span class="discord-check">✓</span> Real-time listing updates as properties become available</div>
+          <div class="discord-feature"><span class="discord-check">✓</span> Photos and full property details from landlords directly</div>
+          <div class="discord-feature"><span class="discord-check">✓</span> Verified listing badges for properties we've reviewed</div>
+          <div class="discord-feature"><span class="discord-check">✓</span> Roommate matching — find your group before you find the house</div>
+          <div class="discord-feature"><span class="discord-check">✓</span> Student reviews of past properties and landlords</div>
+          <div class="discord-feature"><span class="discord-check">✓</span> Short-term sublease posts for summer and interim housing</div>
+          <div class="discord-feature"><span class="discord-check">✓</span> 1,900+ UCR students, parents, and owners in one place</div>
+        </div>
+        <div style="margin-top:2rem;">
+          <a href="https://discord.gg/YEFmgVtf9A" class="btn btn-gold btn-lg">Join the Discord — It's Free</a>
+        </div>
+      </div>
+      <div class="discord-visual">
+        <div class="discord-visual-header">
+          <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;opacity:.8">
+            <circle cx="50" cy="50" r="47" stroke="white" stroke-width="2"/>
+            <path d="M12 63L50 17L88 63" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="70" y="27" width="7" height="17" rx="1" fill="white"/>
+            <path d="M20 70L38 47L50 59L64 40L82 70" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Highlander Housing
+          <span class="discord-count">1,900 members</span>
+        </div>
+        <div class="discord-channels">
+          <div class="discord-channel"><span class="ch-hash">#</span> verified-full-leases</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> verified-subleases</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> early-access-listings</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> looking-for-housing</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> looking-for-roommate</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> reviews</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> off-market-deals</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> marketplace-goods</div>
+        </div>
+        <div class="discord-note">
+          <strong>📌 UCR housing moves fast.</strong> Most houses are gone before they hit Zillow. Join now and set alerts for new listings.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Community</div>
+      <h2 class="section-title">Students and landlords trust Highlander Housing</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Found my house for next year in under a week. The Discord made it easy to get photos and message the landlord directly. Way better than scrolling through Facebook."</p>
+        <div class="testimonial-author">[PLACEHOLDER — Student Name]</div>
+        <div class="testimonial-role">UCR Student, [Year / Major]</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Helping my daughter find housing from out of state was stressful until I found this. The parent guide explained everything clearly, and the community felt organized and trustworthy."</p>
+        <div class="testimonial-author">[PLACEHOLDER — Parent Name]</div>
+        <div class="testimonial-role">Parent of UCR Student</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"I've listed through Highlander Housing for two seasons. The audience is focused — I'm reaching actual UCR students looking for housing now, not random Craigslist traffic."</p>
+        <div class="testimonial-author">[PLACEHOLDER — Landlord Name]</div>
+        <div class="testimonial-role">Property Owner, Riverside</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-gray">
+  <div class="container-sm">
+    <div class="section-header center">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Is Highlander Housing affiliated with UC Riverside?<span class="faq-icon">+</span></button>
+        <div class="faq-a">No. Highlander Housing is an independent student housing community. We are not affiliated with, endorsed by, or officially connected to the University of California, Riverside.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does Highlander Housing approve tenants or collect application fees?<span class="faq-icon">+</span></button>
+        <div class="faq-a">No. Highlander Housing is a discovery and coordination platform. We do not approve tenants, collect application fees, manage leases, or handle rent. All of that is handled directly between the student and the landlord or property owner. Always verify details directly before signing anything or making payments.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How does Discord work if I've never used it?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Discord is a free app available on iPhone, Android, Mac, PC, and in your browser. Once you join the Highlander Housing server, you can browse dedicated channels for listings, subleases, roommate matching, reviews, and more. Most students get the hang of it in minutes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">When should I start looking for UCR housing?<span class="faq-icon">+</span></button>
+        <div class="faq-a">UCR housing moves fast — faster than most students expect. For September move-ins, most students start looking in February or March. By May or June, most quality full-year leases are already signed. Subleases and short-term rentals open up closer to the summer.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What's the difference between a full lease and a sublease?<span class="faq-icon">+</span></button>
+        <div class="faq-a">A full lease is a 12-month (or longer) agreement directly with a landlord, typically starting in August or September. A sublease is a shorter-term arrangement — usually a current tenant renting their room or unit to someone else. Subleases are common for summer housing when the original tenant leaves town.</div>
+      </div>
+    </div>
+    <div class="text-center mt-lg">
+      <a href="resources.html" class="btn btn-outline">Read the Full UCR Housing Guide →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to find your place near UCR?</h2>
+    <p>Join 1,900+ students, parents, and landlords already in the community. Free to browse. Free to join.</p>
+    <a href="contact.html" class="btn btn-outline-white btn-lg">Join the Discord — Free →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <svg class="footer-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="47" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 63L50 17L88 63" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="70" y="27" width="7" height="17" rx="1" fill="currentColor"/>
+            <path d="M20 70L38 47L50 59L64 40L82 70" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="footer-logo-text">Highlander Housing</span>
+        </div>
+        <p class="footer-desc">UCR off-campus housing made easier, safer, and more organized. The student housing marketplace for UC Riverside.</p>
+        <a href="https://discord.gg/YEFmgVtf9A" class="btn btn-gold btn-sm">Join Discord</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Students</div>
+        <div class="footer-col-links">
+          <a href="listings.html">Available Listings</a>
+          <a href="subleases.html">Subleases</a>
+          <a href="roommates.html">Roommate Finder</a>
+          <a href="housing.html">UCR Housing Guide</a>
+          <a href="parents.html">For Parents</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Owners</div>
+        <div class="footer-col-links">
+          <a href="list-property.html">List Your Property</a>
+          <a href="investors.html">Investors</a>
+          <a href="resources.html">Resources</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-col-links">
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://discord.gg/YEFmgVtf9A">Join Discord</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">Highlander Housing is an independent housing community and is not affiliated with, endorsed by, or officially connected to the University of California, Riverside. Highlander Housing is not a landlord, property manager, broker, or lease approval party. Listings are provided for discovery and coordination purposes only. Rent, availability, lease terms, deposits, application fees, and approval decisions are controlled by the listing party. Always verify information directly with landlords before signing or making payments. Investment information is for informational purposes only and does not constitute financial advice.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+
+<script src="/data/render-listings.js"></script>
+<script>
+(async () => {
+  try {
+    const [lD, sD] = await Promise.all([fetchJSON('/data/leases.json'), fetchJSON('/data/subleases.json')]);
+    const activeLeases = (lD.items||[]).filter(l=>l.active!==false);
+    const activeSubs   = (sD.items||[]).filter(l=>l.active!==false);
+    // Show up to 2 leases + 1 sublease (or fill from leases if no subs)
+    const featured = [...activeLeases.slice(0,2), ...activeSubs.slice(0,1)].slice(0,3);
+    const cards = featured.map(l => l.rent && l.area ? 
+      (l.available && l.available.includes('→') || l.show_rent===false ? subleaseCard(l) : leaseCard(l))
+      : leaseCard(l));
+    // fallback: just show first 3 leases
+    const show = cards.length ? cards : activeLeases.slice(0,3).map(leaseCard);
+    setGrid('featuredGrid', show.join(''));
+  } catch(e) { setGrid('featuredGrid',''); }
+})();
+</script>
+</body>
+</html>

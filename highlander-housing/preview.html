@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highlander Housing — UCR Off-Campus Housing Marketplace</title>
+  <meta name="description" content="The organized marketplace for UCR off-campus housing. Browse listings, find roommates, and connect with landlords near UC Riverside. 1,900+ members. Free to browse.">
+  <meta name="keywords" content="UCR off campus housing, UCR student housing, UC Riverside housing, UCR apartments, UCR houses for rent, UCR subleases, UCR roommate finder">
+  <style>
+/* ==========================================================================
+   HIGHLANDER HOUSING — Main Stylesheet v1.0
+   Palette: Deep Navy · Sky Blue · Amber Gold
+   Type: Plus Jakarta Sans (display) + Inter (body)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+/* --- Tokens --- */
+:root {
+  --c-dark:    #0F172A;
+  --c-navy:    #1E3A5F;
+  --c-blue:    #1D6DB5;
+  --c-blue-l:  #3B82F6;
+  --c-gold:    #B87514;
+  --c-gold-l:  #F59E0B;
+  --c-bg:      #F7F9FC;
+  --c-white:   #FFFFFF;
+  --c-g50:     #F8FAFC;
+  --c-g100:    #F1F5F9;
+  --c-g200:    #E2E8F0;
+  --c-g300:    #CBD5E1;
+  --c-g400:    #94A3B8;
+  --c-g500:    #64748B;
+  --c-g700:    #334155;
+  --c-text:    #1E293B;
+  --font-d:    'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-b:    'Inter', system-ui, sans-serif;
+  --container: 1200px;
+  --r:         12px;
+  --r-sm:      8px;
+  --r-lg:      20px;
+  --sh-sm:     0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+  --sh-md:     0 4px 16px rgba(0,0,0,.08),0 2px 4px rgba(0,0,0,.04);
+  --sh-lg:     0 10px 40px rgba(0,0,0,.10),0 4px 12px rgba(0,0,0,.05);
+  --t:         .2s ease;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-b);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--c-text);
+  background: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; transition: var(--t); }
+button { cursor: pointer; font-family: inherit; border: none; background: none; }
+ul, ol { list-style: none; }
+
+/* --- Layout --- */
+.container    { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
+.container-sm { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+.container-md { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
+.section      { padding: 5rem 0; }
+.section-sm   { padding: 3rem 0; }
+.section-lg   { padding: 7rem 0; }
+.section-gray { background: var(--c-g100); }
+.section-dark { background: var(--c-dark); color: var(--c-white); }
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: .5rem; padding: .75rem 1.75rem; border-radius: var(--r-sm);
+  font-family: var(--font-d); font-size: .9375rem; font-weight: 600;
+  line-height: 1; transition: all var(--t); white-space: nowrap; cursor: pointer;
+  border: 2px solid transparent;
+}
+.btn-primary  { background: var(--c-blue); color: #fff; border-color: var(--c-blue); }
+.btn-primary:hover { background: var(--c-blue-l); border-color: var(--c-blue-l); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(29,109,181,.35); }
+.btn-gold     { background: var(--c-gold-l); color: #fff; border-color: var(--c-gold-l); }
+.btn-gold:hover { filter: brightness(1.1); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(245,158,11,.4); }
+.btn-outline  { background: transparent; color: var(--c-dark); border-color: var(--c-g200); }
+.btn-outline:hover { background: var(--c-dark); border-color: var(--c-dark); color: #fff; }
+.btn-outline-white { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
+.btn-outline-white:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+.btn-lg { padding: 1rem 2.25rem; font-size: 1rem; }
+.btn-sm { padding: .5rem 1.25rem; font-size: .875rem; }
+
+/* --- Nav --- */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--c-dark); border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px; max-width: var(--container); margin: 0 auto; padding: 0 1.5rem;
+}
+.nav-logo { display: flex; align-items: center; gap: .625rem; }
+.nav-logo-icon { width: 34px; height: 34px; flex-shrink: 0; }
+.nav-logo-text { font-family: var(--font-d); font-size: 1.0625rem; font-weight: 700; color: #fff; letter-spacing: -.01em; }
+.nav-links { display: flex; align-items: center; gap: .125rem; }
+.nav-link { padding: .5rem .875rem; font-size: .9rem; font-weight: 500; color: rgba(255,255,255,.7); border-radius: var(--r-sm); transition: var(--t); }
+.nav-link:hover, .nav-link.active { color: #fff; background: rgba(255,255,255,.08); }
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle {
+  display: flex; align-items: center; gap: .3rem; padding: .5rem .875rem;
+  font-size: .9rem; font-weight: 500; color: rgba(255,255,255,.7);
+  border-radius: var(--r-sm); cursor: pointer; transition: var(--t);
+}
+.nav-dropdown-toggle:hover { color: #fff; background: rgba(255,255,255,.08); }
+.nav-dropdown-menu {
+  display: none; position: absolute; top: calc(100% + 8px); left: 0;
+  background: #fff; border-radius: var(--r); box-shadow: var(--sh-lg);
+  min-width: 200px; padding: .5rem; z-index: 200;
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a { display: block; padding: .6rem 1rem; font-size: .9rem; color: var(--c-text); border-radius: var(--r-sm); transition: var(--t); }
+.nav-dropdown-menu a:hover { background: var(--c-g100); }
+.nav-cta { margin-left: 1rem; }
+.nav-mobile-toggle { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+.nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: var(--t); }
+.nav-mobile { display: none; position: fixed; top: 68px; left: 0; right: 0; bottom: 0; background: var(--c-dark); padding: 1.5rem; z-index: 99; overflow-y: auto; flex-direction: column; gap: .375rem; }
+.nav-mobile.open { display: flex; }
+.nav-mobile a { padding: .875rem 1rem; font-family: var(--font-d); font-size: 1.05rem; font-weight: 600; color: rgba(255,255,255,.8); border-radius: var(--r-sm); transition: var(--t); border-bottom: 1px solid rgba(255,255,255,.05); }
+.nav-mobile a:hover { color: #fff; background: rgba(255,255,255,.08); }
+.nav-mobile .btn { margin-top: 1rem; }
+
+/* --- Hero --- */
+.hero { background: var(--c-dark); position: relative; overflow: hidden; padding: 6rem 0 5rem; }
+.hero-bg-mark { position: absolute; right: -4%; top: 50%; transform: translateY(-50%); width: 48%; max-width: 580px; opacity: .035; color: #fff; pointer-events: none; }
+.hero-content { position: relative; z-index: 2; max-width: 680px; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: .5rem; font-size: .8125rem; font-weight: 600; color: var(--c-gold-l); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1.25rem; }
+.hero-eyebrow::before { content: ''; display: block; width: 18px; height: 2px; background: var(--c-gold-l); border-radius: 2px; }
+.hero h1 { font-family: var(--font-d); font-size: clamp(2.75rem, 5.5vw, 4.25rem); font-weight: 800; color: #fff; line-height: 1.05; letter-spacing: -.03em; margin-bottom: 1.5rem; }
+.hero h1 em { font-style: normal; color: var(--c-gold-l); }
+.hero-desc { font-size: clamp(1rem,1.5vw,1.2rem); color: rgba(255,255,255,.65); line-height: 1.7; max-width: 540px; margin-bottom: 2.25rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
+.hero-trust { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.hero-trust-item { display: flex; align-items: center; gap: .4rem; font-size: .875rem; color: rgba(255,255,255,.5); }
+.hero-trust-item::before { content: '✓'; color: var(--c-gold-l); font-weight: 700; }
+
+/* Page hero (inner pages) */
+.page-hero { background: var(--c-dark); padding: 4rem 0; color: #fff; }
+.page-eyebrow { font-size: .8125rem; font-weight: 600; color: var(--c-gold-l); letter-spacing: .08em; text-transform: uppercase; margin-bottom: .75rem; }
+.page-hero h1 { font-family: var(--font-d); font-size: clamp(2rem,4vw,3rem); font-weight: 800; color: #fff; letter-spacing: -.02em; line-height: 1.15; margin-bottom: .875rem; }
+.page-hero p { font-size: 1.0625rem; color: rgba(255,255,255,.65); max-width: 560px; line-height: 1.7; }
+.page-hero-actions { margin-top: 1.75rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* --- Stats Bar --- */
+.stats-bar { background: #fff; border-bottom: 1px solid var(--c-g200); padding: 2.5rem 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; text-align: center; }
+.stat-number { font-family: var(--font-d); font-size: clamp(1.875rem,3.5vw,2.75rem); font-weight: 800; color: var(--c-dark); letter-spacing: -.03em; line-height: 1; }
+.stat-label { font-size: .875rem; color: var(--c-g500); margin-top: .375rem; font-weight: 500; }
+
+/* --- Section Headers --- */
+.section-label { font-size: .8125rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .75rem; }
+.section-title { font-family: var(--font-d); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 800; color: var(--c-dark); letter-spacing: -.02em; line-height: 1.15; }
+.section-desc { font-size: 1.0625rem; color: var(--c-g500); line-height: 1.7; margin-top: .75rem; max-width: 540px; }
+.section-header { margin-bottom: 3rem; }
+.section-header.center { text-align: center; }
+.section-header.center .section-desc { margin: .75rem auto 0; }
+
+/* --- Audience Cards --- */
+.audience-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+.audience-card { background: #fff; border: 1px solid var(--c-g200); border-radius: var(--r); padding: 2rem 1.5rem; transition: all var(--t); display: flex; flex-direction: column; gap: .625rem; }
+.audience-card:hover { border-color: var(--c-blue); box-shadow: var(--sh-md); transform: translateY(-2px); }
+.audience-icon { width: 44px; height: 44px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: .375rem; }
+.ai-blue   { background: rgba(29,109,181,.1); }
+.ai-gold   { background: rgba(245,158,11,.1); }
+.ai-green  { background: rgba(16,185,129,.1); }
+.ai-purple { background: rgba(139,92,246,.1); }
+.audience-card h3 { font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; color: var(--c-dark); }
+.audience-card p { font-size: .9rem; color: var(--c-g500); line-height: 1.6; flex: 1; }
+.card-link { font-size: .875rem; font-weight: 600; color: var(--c-blue); display: flex; align-items: center; gap: .25rem; margin-top: auto; transition: var(--t); }
+.audience-card:hover .card-link { gap: .5rem; }
+
+/* --- Steps --- */
+.steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.5rem; position: relative; }
+.steps-grid::before { content: ''; position: absolute; top: 27px; left: calc(16.67% + .75rem); right: calc(16.67% + .75rem); height: 1px; background: var(--c-g200); }
+.step { position: relative; z-index: 1; }
+.step-num { width: 54px; height: 54px; border-radius: 50%; background: var(--c-dark); color: #fff; font-family: var(--font-d); font-size: 1.25rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+.step h3 { font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; color: var(--c-dark); margin-bottom: .5rem; }
+.step p { font-size: .9375rem; color: var(--c-g500); line-height: 1.65; }
+
+/* --- Listing Cards --- */
+.listings-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+.listing-card { background: #fff; border: 1px solid var(--c-g200); border-radius: var(--r); overflow: hidden; transition: all var(--t); }
+.listing-card:hover { box-shadow: var(--sh-md); transform: translateY(-2px); border-color: var(--c-g400); }
+.listing-img { height: 172px; background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-dark) 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.12); font-size: 3rem; position: relative; }
+.listing-badge { position: absolute; top: 12px; left: 12px; font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: .25rem .625rem; border-radius: 20px; color: #fff; background: var(--c-dark); }
+.listing-badge.sublease  { background: var(--c-gold-l); }
+.listing-badge.available { background: #10B981; }
+.listing-body { padding: 1.25rem; }
+.listing-area { font-size: .75rem; font-weight: 700; color: var(--c-g400); letter-spacing: .06em; text-transform: uppercase; margin-bottom: .3rem; }
+.listing-name { font-family: var(--font-d); font-size: 1rem; font-weight: 700; color: var(--c-dark); margin-bottom: .5rem; }
+.listing-price { font-family: var(--font-d); font-size: 1.25rem; font-weight: 800; color: var(--c-dark); }
+.listing-price span { font-size: .875rem; font-weight: 500; color: var(--c-g500); }
+.listing-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0; }
+.listing-meta-item { font-size: .8rem; color: var(--c-g500); }
+.listing-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: 1rem; }
+.listing-tag { font-size: .75rem; font-weight: 500; color: var(--c-g700); background: var(--c-g100); padding: .2rem .5rem; border-radius: 4px; }
+.listing-cta { display: block; width: 100%; text-align: center; padding: .625rem; background: var(--c-dark); color: #fff; font-size: .875rem; font-weight: 600; font-family: var(--font-d); border-radius: var(--r-sm); transition: var(--t); }
+.listing-cta:hover { background: var(--c-navy); }
+
+/* --- Discord Section --- */
+.discord-section { background: var(--c-dark); padding: 5rem 0; position: relative; overflow: hidden; }
+.discord-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.discord-features { display: flex; flex-direction: column; gap: .875rem; margin-top: 1.75rem; }
+.discord-feature { display: flex; align-items: flex-start; gap: .75rem; font-size: .9375rem; color: rgba(255,255,255,.8); line-height: 1.55; }
+.discord-check { color: var(--c-gold-l); flex-shrink: 0; margin-top: 1px; font-weight: 700; }
+.discord-visual { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: var(--r-lg); padding: 1.75rem; }
+.discord-visual-header { font-family: var(--font-d); font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 1rem; display: flex; align-items: center; gap: .5rem; }
+.discord-count { font-size: .8rem; font-weight: 500; color: rgba(255,255,255,.35); margin-left: auto; }
+.discord-channels { display: flex; flex-direction: column; }
+.discord-channel { display: flex; align-items: center; gap: .625rem; padding: .5rem .75rem; border-radius: var(--r-sm); color: rgba(255,255,255,.55); font-size: .875rem; font-weight: 500; transition: var(--t); cursor: default; }
+.discord-channel:hover { background: rgba(255,255,255,.07); color: rgba(255,255,255,.85); }
+.ch-hash { color: rgba(255,255,255,.25); }
+.discord-note { margin-top: 1.125rem; padding: .875rem; background: rgba(255,255,255,.05); border-radius: 8px; font-size: .8125rem; color: rgba(255,255,255,.55); line-height: 1.55; }
+.discord-note strong { color: rgba(255,255,255,.75); }
+
+/* --- Testimonials --- */
+.testimonial-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+.testimonial-card { background: #fff; border: 1px solid var(--c-g200); border-radius: var(--r); padding: 1.75rem; }
+.testimonial-stars { color: var(--c-gold-l); letter-spacing: 2px; margin-bottom: 1rem; }
+.testimonial-quote { font-size: .9375rem; color: var(--c-g700); line-height: 1.7; font-style: italic; margin-bottom: 1.25rem; }
+.testimonial-author { font-size: .875rem; font-weight: 600; color: var(--c-dark); }
+.testimonial-role { font-size: .8rem; color: var(--c-g500); margin-top: .2rem; }
+
+/* --- FAQ --- */
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--c-g200); }
+.faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 0; font-family: var(--font-d); font-size: 1rem; font-weight: 600; color: var(--c-dark); text-align: left; cursor: pointer; gap: 1rem; transition: var(--t); }
+.faq-q:hover { color: var(--c-blue); }
+.faq-icon { width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--c-g300); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--c-g500); flex-shrink: 0; transition: var(--t); }
+.faq-item.open .faq-icon { background: var(--c-dark); border-color: var(--c-dark); color: #fff; transform: rotate(45deg); }
+.faq-a { display: none; padding-bottom: 1.25rem; font-size: .9375rem; color: var(--c-g500); line-height: 1.7; }
+.faq-item.open .faq-a { display: block; }
+
+/* --- CTA Banner --- */
+.cta-banner { background: var(--c-blue); padding: 4.5rem 0; text-align: center; color: #fff; }
+.cta-banner h2 { font-family: var(--font-d); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -.02em; }
+.cta-banner p { font-size: 1.0625rem; color: rgba(255,255,255,.8); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+/* --- Features List --- */
+.feature-list { display: flex; flex-direction: column; gap: 1rem; }
+.feature-item { display: flex; gap: 1rem; align-items: flex-start; }
+.feature-icon { width: 42px; height: 42px; border-radius: var(--r-sm); background: rgba(29,109,181,.1); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+.feature-icon.gold { background: rgba(245,158,11,.1); }
+.feature-icon.green { background: rgba(16,185,129,.1); }
+.feature-h { font-family: var(--font-d); font-size: 1rem; font-weight: 600; color: var(--c-dark); margin-bottom: .2rem; }
+.feature-p { font-size: .9rem; color: var(--c-g500); line-height: 1.6; }
+
+/* --- Value Cards --- */
+.value-card { background: #fff; border: 1px solid var(--c-g200); border-radius: var(--r); padding: 1.75rem; text-align: center; }
+.value-card.featured { border-color: var(--c-blue); box-shadow: 0 0 0 3px rgba(29,109,181,.1); }
+.value-num { font-family: var(--font-d); font-size: 2.25rem; font-weight: 800; color: var(--c-dark); letter-spacing: -.03em; line-height: 1.1; }
+.value-lbl { font-size: .875rem; color: var(--c-g500); margin-top: .3rem; }
+
+/* --- Disclaimer --- */
+.disclaimer-box { background: rgba(29,109,181,.05); border: 1px solid rgba(29,109,181,.15); border-radius: var(--r); padding: 1.25rem 1.5rem; font-size: .875rem; color: var(--c-g700); line-height: 1.65; }
+.disclaimer-box strong { color: var(--c-dark); }
+
+/* --- Pro Tip --- */
+.pro-tip { background: rgba(245,158,11,.07); border-left: 3px solid var(--c-gold-l); padding: .875rem 1.25rem; border-radius: 0 var(--r-sm) var(--r-sm) 0; font-size: .9rem; color: var(--c-g700); line-height: 1.6; }
+
+/* --- Forms --- */
+.form-group { margin-bottom: 1.25rem; }
+.form-label { display: block; font-size: .875rem; font-weight: 600; color: var(--c-dark); margin-bottom: .375rem; }
+.form-req { color: var(--c-blue); }
+.form-input, .form-select, .form-textarea {
+  width: 100%; padding: .75rem 1rem; border: 1.5px solid var(--c-g200);
+  border-radius: var(--r-sm); font-family: var(--font-b); font-size: .9375rem;
+  color: var(--c-text); background: #fff; transition: var(--t); outline: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--c-blue); box-shadow: 0 0 0 3px rgba(29,109,181,.1); }
+.form-textarea { resize: vertical; min-height: 120px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+/* --- Guide Cards (Resources) --- */
+.guide-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
+.guide-card { background: #fff; border: 1px solid var(--c-g200); border-radius: var(--r); padding: 1.5rem; transition: all var(--t); display: flex; gap: 1.125rem; align-items: flex-start; }
+.guide-card:hover { border-color: var(--c-blue); box-shadow: var(--sh-sm); transform: translateY(-1px); }
+.guide-icon { width: 44px; height: 44px; background: var(--c-g100); border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; }
+.guide-cat { font-size: .7rem; font-weight: 700; color: var(--c-blue); letter-spacing: .06em; text-transform: uppercase; margin-bottom: .2rem; }
+.guide-card h3 { font-family: var(--font-d); font-size: .975rem; font-weight: 700; color: var(--c-dark); margin-bottom: .25rem; }
+.guide-card p { font-size: .85rem; color: var(--c-g500); line-height: 1.5; }
+
+/* --- Footer --- */
+footer { background: var(--c-dark); color: rgba(255,255,255,.6); padding: 4rem 0 2rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-logo { display: flex; align-items: center; gap: .625rem; margin-bottom: 1rem; }
+.footer-logo-icon { width: 30px; height: 30px; color: #fff; }
+.footer-logo-text { font-family: var(--font-d); font-weight: 700; color: #fff; font-size: .9375rem; }
+.footer-desc { font-size: .875rem; line-height: 1.7; color: rgba(255,255,255,.45); max-width: 280px; margin-bottom: 1.25rem; }
+.footer-col-title { font-family: var(--font-d); font-size: .75rem; font-weight: 700; color: rgba(255,255,255,.35); letter-spacing: .08em; text-transform: uppercase; margin-bottom: .875rem; }
+.footer-col-links { display: flex; flex-direction: column; gap: .5rem; }
+.footer-col-links a { font-size: .9rem; color: rgba(255,255,255,.55); transition: var(--t); }
+.footer-col-links a:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.07); padding-top: 1.5rem; display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+.footer-disclaimer { font-size: .78rem; color: rgba(255,255,255,.3); line-height: 1.65; flex: 1; }
+.footer-legal { display: flex; gap: 1.25rem; flex-shrink: 0; }
+.footer-legal a { font-size: .8rem; color: rgba(255,255,255,.35); transition: var(--t); }
+.footer-legal a:hover { color: rgba(255,255,255,.65); }
+
+/* --- Text utilities --- */
+.text-white  { color: #fff; }
+.text-gold   { color: var(--c-gold-l); }
+.text-blue   { color: var(--c-blue); }
+.text-muted  { color: var(--c-g500); }
+.text-center { text-align: center; }
+.t-sm        { font-size: .875rem; }
+.t-xs        { font-size: .75rem; }
+.mt-sm { margin-top: .75rem; }
+.mt-md { margin-top: 1.5rem; }
+.mt-lg { margin-top: 2rem; }
+.mt-xl { margin-top: 3rem; }
+.mb-md { margin-bottom: 1.5rem; }
+.mb-lg { margin-bottom: 2rem; }
+.hidden { display: none; }
+
+/* ========================
+   RESPONSIVE
+   ======================== */
+@media (max-width: 1024px) {
+  .audience-grid { grid-template-columns: repeat(2,1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .stats-grid { grid-template-columns: repeat(2,1fr); row-gap: 2rem; }
+  .listings-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-dropdown, .nav-cta { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .section { padding: 3.5rem 0; }
+  .section-lg { padding: 4.5rem 0; }
+  .hero { padding: 4rem 0 3.5rem; }
+  .hero-bg-mark { display: none; }
+  .steps-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .steps-grid::before { display: none; }
+  .listings-grid { grid-template-columns: 1fr; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .discord-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 1rem; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .page-hero-actions { flex-direction: column; }
+  .form-row { grid-template-columns: 1fr; }
+  .guide-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .audience-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div style="background:#1D6DB5;color:white;text-align:center;padding:.75rem 1rem;font-family:system-ui;font-size:.875rem;font-weight:500;position:sticky;top:0;z-index:9999;border-bottom:2px solid rgba(255,255,255,.2);">
+  ⚡ <strong>PREVIEW</strong> — Highlander Housing Website · Replace <code style="background:rgba(255,255,255,.2);padding:.1rem .3rem;border-radius:3px;">href="#"</code> Discord links with your actual invite URL before launch
+</div>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" style="color:white">
+        <circle cx="50" cy="50" r="47" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 63L50 17L88 63" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="70" y="27" width="7" height="17" rx="1" fill="currentColor"/>
+        <path d="M20 70L38 47L50 59L64 40L82 70" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="nav-logo-text">Highlander Housing</span>
+    </a>
+    <div class="nav-links">
+      <a href="listings.html" class="nav-link">Listings</a>
+      <a href="subleases.html" class="nav-link">Subleases</a>
+      <a href="roommates.html" class="nav-link">Roommates</a>
+      <a href="parents.html" class="nav-link">For Parents</a>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-toggle">For Owners ▾</span>
+        <div class="nav-dropdown-menu">
+          <a href="list-property.html">List Your Property</a>
+          <a href="investors.html">Investors</a>
+        </div>
+      </div>
+      <a href="resources.html" class="nav-link">Resources</a>
+      <a href="about.html" class="nav-link">About</a>
+    </div>
+    <a href="https://discord.gg/YEFmgVtf9A" class="btn btn-gold nav-cta">Join Discord</a>
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="listings.html">Listings</a>
+  <a href="subleases.html">Subleases</a>
+  <a href="roommates.html">Roommates</a>
+  <a href="parents.html">For Parents</a>
+  <a href="list-property.html">List Your Property</a>
+  <a href="investors.html">Investors</a>
+  <a href="resources.html">Resources</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="https://discord.gg/YEFmgVtf9A" class="btn btn-gold">Join the Discord</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-mark" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="47" stroke="white" stroke-width="1.5"/>
+      <path d="M12 63L50 17L88 63" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="70" y="27" width="7" height="17" rx="1" fill="white"/>
+      <path d="M20 70L38 47L50 59L64 40L82 70" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">UCR Student Housing Community</div>
+      <h1>UCR Off-Campus Housing.<br><em>Made Easier.</em></h1>
+      <p class="hero-desc">
+        The organized marketplace for UCR students, parents, and property owners. Browse listings, find roommates, and connect with landlords — all in one place.
+      </p>
+      <div class="hero-actions">
+        <a href="https://discord.gg/YEFmgVtf9A" class="btn btn-gold btn-lg">Join the Discord →</a>
+        <a href="listings.html" class="btn btn-outline-white btn-lg">Browse Listings</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-item">1,900+ community members</span>
+        <span class="hero-trust-item">300+ students housed this season</span>
+        <span class="hero-trust-item">Free to browse</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-number">1,900+</div>
+        <div class="stat-label">Community Members</div>
+      </div>
+      <div>
+        <div class="stat-number">300+</div>
+        <div class="stat-label">Students Housed This Season</div>
+      </div>
+      <div>
+        <div class="stat-number">Weekly</div>
+        <div class="stat-label">Listing Updates</div>
+      </div>
+      <div>
+        <div class="stat-number">UCR</div>
+        <div class="stat-label">Founded by a UCR Graduate</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Who We Serve</div>
+      <h2 class="section-title">What are you looking for?</h2>
+      <p class="section-desc">Highlander Housing connects UCR students, parents, property owners, and investors in one organized community.</p>
+    </div>
+    <div class="audience-grid">
+      <a href="listings.html" class="audience-card">
+        <div class="audience-icon ai-blue">🎓</div>
+        <h3>I'm a Student</h3>
+        <p>Browse available houses, rooms, subleases, and ADUs near UCR. Get photos, full details, and landlord contact through Discord.</p>
+        <span class="card-link">Find Housing →</span>
+      </a>
+      <a href="parents.html" class="audience-card">
+        <div class="audience-icon ai-gold">👨‍👩‍👧</div>
+        <h3>I'm a Parent</h3>
+        <p>Understand UCR off-campus housing — lease types, timelines, costs, and how to help your student find a safe, organized place.</p>
+        <span class="card-link">Read the Parent Guide →</span>
+      </a>
+      <a href="list-property.html" class="audience-card">
+        <div class="audience-icon ai-green">🏠</div>
+        <h3>I Own a Property</h3>
+        <p>Reach 1,900+ UCR students and parents actively looking for housing. A more targeted audience than Zillow or Facebook.</p>
+        <span class="card-link">List Your Property →</span>
+      </a>
+      <a href="investors.html" class="audience-card">
+        <div class="audience-icon ai-purple">📈</div>
+        <h3>I'm an Investor</h3>
+        <p>Explore off-market student rental opportunities near UCR. Access deal flow, rental demand data, and trusted local vendors.</p>
+        <span class="card-link">Investor Opportunities →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Simple Process</div>
+      <h2 class="section-title">How it works for students</h2>
+      <p class="section-desc">Finding housing near UCR shouldn't mean scrolling through Facebook groups and Craigslist hoping something is still available.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Browse listings</h3>
+        <p>See what's currently available near UCR — full-year leases, rooms, subleases, and ADUs. No account required to browse.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Join the Discord</h3>
+        <p>Get access to photos, full property details, move-in timelines, and direct landlord contact inside the Highlander Housing server.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Connect and secure</h3>
+        <p>Message landlords directly, coordinate with potential roommates, and get your place locked in before it's gone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED LISTINGS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="section-label">Current Inventory</div>
+        <h2 class="section-title">Available Near UCR</h2>
+        <p class="section-desc">Join the Discord for photos, full addresses, and landlord contact.</p>
+      </div>
+      <a href="listings.html" class="btn btn-outline">View All Listings →</a>
+    </div>
+    <div class="listings-grid">
+      <div class="listing-card">
+        <div class="listing-img">🏡<span class="listing-badge">Full Lease</span></div>
+        <div class="listing-body">
+          <div class="listing-area">Broadbent Area</div>
+          <div class="listing-name">5 BR / 3 BA — New Construction ADU</div>
+          <div class="listing-price">$5,000<span>/mo</span></div>
+          <div class="listing-meta">
+            <span class="listing-meta-item">📅 Sept 1</span>
+            <span class="listing-meta-item">📍 Near UCR</span>
+          </div>
+          <div class="listing-tags">
+            <span class="listing-tag">Pool</span>
+            <span class="listing-tag">Bar</span>
+            <span class="listing-tag">Built 2024</span>
+          </div>
+          <a href="contact.html" class="listing-cta">Join Discord for Details</a>
+        </div>
+      </div>
+      <div class="listing-card">
+        <div class="listing-img">🏘️<span class="listing-badge">Full Lease</span></div>
+        <div class="listing-body">
+          <div class="listing-area">Shady Grove Area</div>
+          <div class="listing-name">6 BR / 3 BA — Student House</div>
+          <div class="listing-price">$5,250<span>/mo</span></div>
+          <div class="listing-meta">
+            <span class="listing-meta-item">📅 Sept 1</span>
+            <span class="listing-meta-item">🚶 Walk to UCR</span>
+          </div>
+          <div class="listing-tags">
+            <span class="listing-tag">Walk to Campus</span>
+            <span class="listing-tag">6 Bedrooms</span>
+          </div>
+          <a href="contact.html" class="listing-cta">Join Discord for Details</a>
+        </div>
+      </div>
+      <div class="listing-card">
+        <div class="listing-img">🏠<span class="listing-badge sublease">Sublease</span></div>
+        <div class="listing-body">
+          <div class="listing-area">Spruce Area</div>
+          <div class="listing-name">2 BR / 1 BA — Furnished ADU</div>
+          <div class="listing-price">$799<span>/mo</span></div>
+          <div class="listing-meta">
+            <span class="listing-meta-item">📅 Now → Aug 31</span>
+          </div>
+          <div class="listing-tags">
+            <span class="listing-tag">Fully Furnished</span>
+            <span class="listing-tag">Biweekly Housekeeping</span>
+          </div>
+          <a href="contact.html" class="listing-cta">Join Discord for Details</a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center t-sm text-muted" style="margin-top:1.5rem;">Listings update regularly. Full details, photos, and landlord contact inside the Discord.</p>
+  </div>
+</section>
+
+<!-- WHY DISCORD -->
+<section class="discord-section">
+  <div class="container">
+    <div class="discord-inner">
+      <div>
+        <div class="section-label" style="color:var(--c-gold-l)">Why Discord</div>
+        <h2 style="font-family:var(--font-d);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.15;margin-bottom:.875rem;">The live hub for UCR housing.</h2>
+        <p style="color:rgba(255,255,255,.65);font-size:1.0625rem;line-height:1.7;max-width:460px;">
+          Unlike a static website or scattered Facebook posts, the Highlander Housing Discord is where listings get posted, photos get shared, and landlords actually respond — in real time.
+        </p>
+        <div class="discord-features">
+          <div class="discord-feature"><span class="discord-check">✓</span> Real-time listing updates as properties become available</div>
+          <div class="discord-feature"><span class="discord-check">✓</span> Photos and full property details from landlords directly</div>
+          <div class="discord-feature"><span class="discord-check">✓</span> Verified listing badges for properties we've reviewed</div>
+          <div class="discord-feature"><span class="discord-check">✓</span> Roommate matching — find your group before you find the house</div>
+          <div class="discord-feature"><span class="discord-check">✓</span> Student reviews of past properties and landlords</div>
+          <div class="discord-feature"><span class="discord-check">✓</span> Short-term sublease posts for summer and interim housing</div>
+          <div class="discord-feature"><span class="discord-check">✓</span> 1,900+ UCR students, parents, and owners in one place</div>
+        </div>
+        <div style="margin-top:2rem;">
+          <a href="https://discord.gg/YEFmgVtf9A" class="btn btn-gold btn-lg">Join the Discord — It's Free</a>
+        </div>
+      </div>
+      <div class="discord-visual">
+        <div class="discord-visual-header">
+          <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;opacity:.8">
+            <circle cx="50" cy="50" r="47" stroke="white" stroke-width="2"/>
+            <path d="M12 63L50 17L88 63" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="70" y="27" width="7" height="17" rx="1" fill="white"/>
+            <path d="M20 70L38 47L50 59L64 40L82 70" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Highlander Housing
+          <span class="discord-count">1,900 members</span>
+        </div>
+        <div class="discord-channels">
+          <div class="discord-channel"><span class="ch-hash">#</span> verified-full-leases</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> verified-subleases</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> early-access-listings</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> looking-for-housing</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> looking-for-roommate</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> reviews</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> off-market-deals</div>
+          <div class="discord-channel"><span class="ch-hash">#</span> marketplace-goods</div>
+        </div>
+        <div class="discord-note">
+          <strong>📌 UCR housing moves fast.</strong> Most houses are gone before they hit Zillow. Join now and set alerts for new listings.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Community</div>
+      <h2 class="section-title">Students and landlords trust Highlander Housing</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Found my house for next year in under a week. The Discord made it easy to get photos and message the landlord directly. Way better than scrolling through Facebook."</p>
+        <div class="testimonial-author">[PLACEHOLDER — Student Name]</div>
+        <div class="testimonial-role">UCR Student, [Year / Major]</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Helping my daughter find housing from out of state was stressful until I found this. The parent guide explained everything clearly, and the community felt organized and trustworthy."</p>
+        <div class="testimonial-author">[PLACEHOLDER — Parent Name]</div>
+        <div class="testimonial-role">Parent of UCR Student</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"I've listed through Highlander Housing for two seasons. The audience is focused — I'm reaching actual UCR students looking for housing now, not random Craigslist traffic."</p>
+        <div class="testimonial-author">[PLACEHOLDER — Landlord Name]</div>
+        <div class="testimonial-role">Property Owner, Riverside</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-gray">
+  <div class="container-sm">
+    <div class="section-header center">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Is Highlander Housing affiliated with UC Riverside?<span class="faq-icon">+</span></button>
+        <div class="faq-a">No. Highlander Housing is an independent student housing community. We are not affiliated with, endorsed by, or officially connected to the University of California, Riverside.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does Highlander Housing approve tenants or collect application fees?<span class="faq-icon">+</span></button>
+        <div class="faq-a">No. Highlander Housing is a discovery and coordination platform. We do not approve tenants, collect application fees, manage leases, or handle rent. All of that is handled directly between the student and the landlord or property owner. Always verify details directly before signing anything or making payments.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How does Discord work if I've never used it?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Discord is a free app available on iPhone, Android, Mac, PC, and in your browser. Once you join the Highlander Housing server, you can browse dedicated channels for listings, subleases, roommate matching, reviews, and more. Most students get the hang of it in minutes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">When should I start looking for UCR housing?<span class="faq-icon">+</span></button>
+        <div class="faq-a">UCR housing moves fast — faster than most students expect. For September move-ins, most students start looking in February or March. By May or June, most quality full-year leases are already signed. Subleases and short-term rentals open up closer to the summer.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What's the difference between a full lease and a sublease?<span class="faq-icon">+</span></button>
+        <div class="faq-a">A full lease is a 12-month (or longer) agreement directly with a landlord, typically starting in August or September. A sublease is a shorter-term arrangement — usually a current tenant renting their room or unit to someone else. Subleases are common for summer housing when the original tenant leaves town.</div>
+      </div>
+    </div>
+    <div class="text-center mt-lg">
+      <a href="resources.html" class="btn btn-outline">Read the Full UCR Housing Guide →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to find your place near UCR?</h2>
+    <p>Join 1,900+ students, parents, and landlords already in the community. Free to browse. Free to join.</p>
+    <a href="contact.html" class="btn btn-outline-white btn-lg">Join the Discord — Free →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <svg class="footer-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="47" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 63L50 17L88 63" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="70" y="27" width="7" height="17" rx="1" fill="currentColor"/>
+            <path d="M20 70L38 47L50 59L64 40L82 70" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="footer-logo-text">Highlander Housing</span>
+        </div>
+        <p class="footer-desc">UCR off-campus housing made easier, safer, and more organized. The student housing marketplace for UC Riverside.</p>
+        <a href="https://discord.gg/YEFmgVtf9A" class="btn btn-gold btn-sm">Join Discord</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Students</div>
+        <div class="footer-col-links">
+          <a href="listings.html">Available Listings</a>
+          <a href="subleases.html">Subleases</a>
+          <a href="roommates.html">Roommate Finder</a>
+          <a href="housing.html">UCR Housing Guide</a>
+          <a href="parents.html">For Parents</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Owners</div>
+        <div class="footer-col-links">
+          <a href="list-property.html">List Your Property</a>
+          <a href="investors.html">Investors</a>
+          <a href="resources.html">Resources</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-col-links">
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://discord.gg/YEFmgVtf9A">Join Discord</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">Highlander Housing is an independent housing community and is not affiliated with, endorsed by, or officially connected to the University of California, Riverside. Highlander Housing is not a landlord, property manager, broker, or lease approval party. Listings are provided for discovery and coordination purposes only. Rent, availability, lease terms, deposits, application fees, and approval decisions are controlled by the listing party. Always verify information directly with landlords before signing or making payments. Investment information is for informational purposes only and does not constitute financial advice.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Highlander Housing — site.js
+
+// Mobile nav
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileNav    = document.getElementById('mobileNav');
+
+if (mobileToggle && mobileNav) {
+  mobileToggle.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close on link click
+  mobileNav.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    })
+  );
+}
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item   = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Active nav link
+const page = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-link').forEach(link => {
+  if (link.getAttribute('href') === page) link.classList.add('active');
+});
+
+// Smooth anchor scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+</script>
+</body>
+</html>

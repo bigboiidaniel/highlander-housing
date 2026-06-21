@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "area": "Broadbent Area",
+      "neighborhood": "Near UCR",
+      "description": "5 BR / 3 BA — New Construction ADU",
+      "rent": "$5,000",
+      "available": "Sept 1",
+      "photo": "",
+      "tags": ["Pool", "Bar", "Built 2024"],
+      "active": true
+    },
+    {
+      "area": "Shady Grove Area",
+      "neighborhood": "Walk to UCR",
+      "description": "6 BR / 3 BA — Student House",
+      "rent": "$5,250",
+      "available": "Sept 1",
+      "photo": "",
+      "tags": ["Walk to Campus", "6 Bedrooms"],
+      "active": true
+    },
+    {
+      "area": "Cottonwood Area",
+      "neighborhood": "Mission Grove",
+      "description": "4 BR / 2 BA — House",
+      "rent": "$3,400",
+      "available": "June 1",
+      "photo": "",
+      "tags": ["Mission Grove", "Rooms Available"],
+      "active": true
+    },
+    {
+      "area": "Cottonwood Area",
+      "neighborhood": "Mission Grove",
+      "description": "4 BR / 2 BA — House",
+      "rent": "$3,300",
+      "available": "Aug 1",
+      "photo": "",
+      "tags": ["Mission Grove", "4 Bedrooms"],
+      "active": true
+    },
+    {
+      "area": "Acacia Area",
+      "neighborhood": "Mission Grove",
+      "description": "5 BR / 3 BA — House",
+      "rent": "$4,300",
+      "available": "Sept 1",
+      "photo": "",
+      "tags": ["Mission Grove", "5 Bedrooms"],
+      "active": true
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+backend:
+  name: git-gateway
+  branch: main
+
+site_url: https://thunderous-palmier-f879e5.netlify.app
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "listings"
+    label: "🏠 Listings Manager"
+    files:
+
+      - label: "Full-Year Leases"
+        name: "leases"
+        file: "data/leases.json"
+        format: "json"
+        fields:
+          - label: "Leases"
+            name: "items"
+            widget: "list"
+            label_singular: "Listing"
+            summary: "{{fields.area}} — {{fields.description}}"
+            fields:
+              - {label: "Area / Street Nickname", name: "area", widget: "string"}
+              - {label: "Neighborhood Note", name: "neighborhood", widget: "string", required: false}
+              - {label: "Property Description", name: "description", widget: "string"}
+              - {label: "Monthly Rent", name: "rent", widget: "string"}
+              - {label: "Available Date", name: "available", widget: "string"}
+              - {label: "Photo", name: "photo", widget: "image", required: false}
+              - {label: "Tags", name: "tags", widget: "list", required: false}
+              - {label: "Show on Website", name: "active", widget: "boolean", default: true}
+
+      - label: "Subleases & Short-Term"
+        name: "subleases"
+        file: "data/subleases.json"
+        format: "json"
+        fields:
+          - label: "Subleases"
+            name: "items"
+            widget: "list"
+            label_singular: "Sublease"
+            summary: "{{fields.area}} — {{fields.description}}"
+            fields:
+              - {label: "Area / Street Nickname", name: "area", widget: "string"}
+              - {label: "Property Description", name: "description", widget: "string"}
+              - {label: "Available Dates", name: "available", widget: "string"}
+              - {label: "Pricing", name: "rent", widget: "string"}
+              - {label: "Show Price on Website", name: "show_rent", widget: "boolean", default: true}
+              - label: "Gender Restriction"
+                name: "gender"
+                widget: "select"
+                required: false
+                default: ""
+                options:
+                  - {label: "None", value: ""}
+                  - {label: "Male Only", value: "Male Only"}
+                  - {label: "Female Only", value: "Female Only"}
+              - {label: "Photo", name: "photo", widget: "image", required: false}
+              - {label: "Tags", name: "tags", widget: "list", required: false}
+              - {label: "Show on Website", name: "active", widget: "boolean", default: true}
