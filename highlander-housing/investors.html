@@ -177,17 +177,17 @@
     <div style="background:#fff;border:1px solid var(--c-g200);border-radius:var(--r);padding:2.5rem;">
       <form action="https://formspree.io/f/xaqgwbwg" method="POST">
         <div class="form-row">
-          <div class="form-group"><label class="form-label">Name <span class="form-req">*</span></label><input class="form-input" type="text" placeholder="Full name"></div>
-          <div class="form-group"><label class="form-label">Phone <span class="form-req">*</span></label><input class="form-input" type="tel" placeholder="(555) 000-0000"></div>
+          <div class="form-group"><label class="form-label">Name <span class="form-req">*</span></label><input class="form-input" type="text" name="name" placeholder="Full name"></div>
+          <div class="form-group"><label class="form-label">Phone <span class="form-req">*</span></label><input class="form-input" type="tel" name="phone" placeholder="(555) 000-0000"></div>
         </div>
-        <div class="form-group"><label class="form-label">Email <span class="form-req">*</span></label><input class="form-input" type="email" placeholder="you@example.com"></div>
+        <div class="form-group"><label class="form-label">Email <span class="form-req">*</span></label><input class="form-input" type="email" name="email" placeholder="you@example.com"></div>
         <div class="form-group"><label class="form-label">Investment focus</label>
-          <select class="form-select"><option value="">Select...</option><option>Off-market purchase</option><option>Parent purchase / student housing</option><option>Foreign national buyer</option><option>Already own, looking to optimize</option><option>Just researching</option></select>
+          <select class="form-select" name="focus"><option value="">Select...</option><option>Off-market purchase</option><option>Parent purchase / student housing</option><option>Foreign national buyer</option><option>Already own, looking to optimize</option><option>Just researching</option></select>
         </div>
         <div class="form-group"><label class="form-label">Budget range</label>
-          <select class="form-select"><option value="">Select...</option><option>Under $500K</option><option>$500K–$750K</option><option>$750K–$1M</option><option>Over $1M</option></select>
+          <select class="form-select" name="budget"><option value="">Select...</option><option>Under $500K</option><option>$500K–$750K</option><option>$750K–$1M</option><option>Over $1M</option></select>
         </div>
-        <div class="form-group"><label class="form-label">Tell us more</label><textarea class="form-textarea" placeholder="What are you looking for? Any specific neighborhoods, property types, or timeline?"></textarea></div>
+        <div class="form-group"><label class="form-label">Tell us more</label><textarea class="form-textarea" name="message" placeholder="What are you looking for? Any specific neighborhoods, property types, or timeline?"></textarea></div>
         <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Request Investor Access →</button>
         <p class="t-xs text-muted text-center" style="margin-top:1rem;">Investment info is for informational purposes only and does not constitute financial advice.</p>
       </form>
