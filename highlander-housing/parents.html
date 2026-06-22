@@ -242,7 +242,7 @@
               </div>
               <div>
                 <label style="display:block;font-size:.8125rem;font-weight:600;color:var(--c-dark);margin-bottom:.375rem;">Phone</label>
-                <input type="tel" name="phone" placeholder="(optional)" style="width:100%;padding:.75rem .875rem;border:1px solid var(--c-g200);border-radius:8px;font-size:.9375rem;font-family:inherit;">
+                <input type="tel" name="phone" required pattern="[\s\-\(\)\.\+0-9]*[0-9][\s\-\(\)\.\+0-9]*" title="Please enter a valid phone number" oninvalid="this.setCustomValidity('Please enter a valid phone number with at least 10 digits')" oninput="this.setCustomValidity(this.value.replace(/\D/g,'').length>=10?'':'Please enter a valid phone number with at least 10 digits')" placeholder="(555) 123-4567" style="width:100%;padding:.75rem .875rem;border:1px solid var(--c-g200);border-radius:8px;font-size:.9375rem;font-family:inherit;">
               </div>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:.875rem;">
