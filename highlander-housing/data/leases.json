@@ -1,70 +1,75 @@
 {
   "items": [
     {
+      "active": true,
+      "available": "Sept 1",
       "area": "Broadbent Area",
       "neighborhood": "Near UCR",
-      "description": "5 BR / 3 BA — New Construction ADU",
-      "rent": "$5,000",
-      "available": "Sept 1",
       "photo": "/assets/images/1.png",
       "tags": [
         "Pool",
         "Bar",
         "Built 2024"
       ],
-      "active": true
+      "rent": "$5,000",
+      "link": "https://discord.com/channels/1198793742539309066/1454635471266250792",
+      "description": "5 BR / 3 BA — New Construction ADU"
     },
     {
+      "active": true,
+      "available": "Sept 1",
       "area": "Shady Grove Area",
       "neighborhood": "Walk to UCR",
-      "description": "6 BR / 3 BA — Student House",
-      "rent": "$5,250",
-      "available": "Sept 1",
       "photo": "/assets/images/copy-of-add-a-subheading.png",
       "tags": [
         "Walk to Campus",
         "6 Bedrooms"
       ],
-      "active": true
+      "rent": "$5,250",
+      "link": "https://discord.com/channels/1198793742539309066/1454639177797865493",
+      "description": "6 BR / 3 BA — Student House"
     },
     {
+      "active": true,
+      "available": "June 1",
       "area": "Cottonwood Area",
       "neighborhood": "Mission Grove",
-      "description": "4 BR / 2 BA — House",
-      "rent": "$3,400",
-      "available": "June 1",
       "photo": "/assets/images/1-2.png",
       "tags": [
         "Mission Grove",
         "Rooms Available"
       ],
-      "active": true
+      "rent": "$3,400",
+      "link": "https://discord.com/channels/1198793742539309066/1500249045195559084",
+      "description": "4 BR / 2 BA — House"
     },
     {
+      "active": true,
+      "available": "Aug 1",
       "area": "Cottonwood Area",
       "neighborhood": "Mission Grove",
-      "description": "4 BR / 2 BA — House",
-      "rent": "$3,300",
-      "available": "Aug 1",
       "photo": "/assets/images/8.png",
       "tags": [
         "Mission Grove",
         "4 Bedrooms"
       ],
-      "active": true
+      "rent": "$3,300",
+      "link": "https://discord.com/channels/1198793742539309066/1500249645392331014",
+      "description": "4 BR / 2 BA — House"
     },
     {
+      "active": true,
+      "available": "Sept 1",
       "area": "Acacia Area",
       "neighborhood": "Mission Grove",
-      "description": "5 BR / 3 BA — House",
-      "rent": "$4,300",
-      "available": "Sept 1",
       "photo": "/assets/images/106-acacia-edit.png",
       "tags": [
         "Mission Grove",
         "5 Bedrooms"
       ],
-      "active": true
+      "rent": "$4,300",
+      "link": "https://discord.com/channels/1198793742539309066/1500247940130803882",
+      "description": "5 BR / 3 BA — House"
     }
   ]
 }
