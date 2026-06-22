@@ -1,37 +1,47 @@
 {
   "items": [
     {
-      "area": "Spruce Area",
-      "description": "2 BR / 1 BA — Fully Furnished ADU",
-      "rent": "$799",
-      "available": "Now → Aug 31",
-      "show_rent": true,
       "gender": "",
-      "photo": "",
-      "tags": ["Fully Furnished", "Biweekly Housekeeping", "ADU"],
-      "active": true
+      "active": true,
+      "available": "Now → Aug 31",
+      "area": "Spruce Area",
+      "photo": "/assets/images/pw23031089_13.jpg",
+      "tags": [
+        "Fully Furnished",
+        "Biweekly Housekeeping",
+        "ADU"
+      ],
+      "rent": "$799",
+      "show_rent": true,
+      "description": "2 BR / 1 BA — Fully Furnished ADU"
     },
     {
-      "area": "Campus Area",
-      "description": "Private Rooms — All-Male House",
-      "rent": "Rooms Available",
-      "available": "Now → Aug 31",
-      "show_rent": false,
       "gender": "Male Only",
-      "photo": "",
-      "tags": ["Male Only", "Furnished"],
-      "active": true
+      "active": true,
+      "available": "Now → Aug 31",
+      "area": "Campus Area",
+      "photo": "/assets/images/6.png",
+      "tags": [
+        "Male Only",
+        "Furnished"
+      ],
+      "rent": "Rooms Available",
+      "show_rent": false,
+      "description": "Private Rooms — All-Male House"
     },
     {
-      "area": "Shady Grove Area",
-      "description": "Private Rooms — All-Female House",
-      "rent": "Rooms Available",
-      "available": "Now → Aug 31",
-      "show_rent": false,
       "gender": "Female Only",
-      "photo": "",
-      "tags": ["Female Only", "Walk to UCR"],
-      "active": true
+      "active": true,
+      "available": "Now → Aug 31",
+      "area": "Shady Grove Area",
+      "photo": "/assets/images/23.png",
+      "tags": [
+        "Female Only",
+        "Walk to UCR"
+      ],
+      "rent": "Rooms Available",
+      "show_rent": false,
+      "description": "Private Rooms — All-Female House"
     }
   ]
 }
