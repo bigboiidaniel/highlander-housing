@@ -30,6 +30,7 @@ collections:
               - {label: "Available Date", name: "available", widget: "string"}
               - {label: "Photo", name: "photo", widget: "image", required: false}
               - {label: "Tags", name: "tags", widget: "list", required: false}
+              - {label: "Discord Link", name: "link", widget: "string", required: false, hint: "Paste the direct Discord channel or message link for this listing"}
               - {label: "Show on Website", name: "active", widget: "boolean", default: true}
 
       - label: "Subleases & Short-Term"
@@ -59,4 +60,5 @@ collections:
                   - {label: "Female Only", value: "Female Only"}
               - {label: "Photo", name: "photo", widget: "image", required: false}
               - {label: "Tags", name: "tags", widget: "list", required: false}
+              - {label: "Discord Link", name: "link", widget: "string", required: false, hint: "Paste the direct Discord channel or message link for this listing"}
               - {label: "Show on Website", name: "active", widget: "boolean", default: true}
