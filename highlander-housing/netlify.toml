@@ -6,3 +6,9 @@
   from   = "/admin"
   to     = "/admin/index.html"
   status = 200
+
+# Keep the CMS admin out of search engines
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
