@@ -350,3 +350,23 @@ footer { background: var(--c-dark); color: rgba(255,255,255,.6); padding: 4rem 0
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .footer-top { grid-template-columns: 1fr; }
 }
+
+/* ==========================================================================
+   Mobile Safety — force inline grids to stack & prevent horizontal overflow
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Any inline two/three/four-column grid collapses to a single column */
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Tables scroll horizontally instead of blowing out the page width */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* Belt-and-suspenders: nothing should force the page wider than the screen */
+  html, body { overflow-x: hidden; }
+  img, video, iframe, table { max-width: 100%; }
+}
