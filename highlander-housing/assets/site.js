@@ -41,3 +41,73 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
+
+/* ==========================================================================
+   Scroll-Synced Video Preview
+   ========================================================================== */
+function initScrollSyncedVideo() {
+  const section = document.getElementById('scrollVideo');
+  const video   = document.getElementById('scrollVideoMedia');
+  if (!section || !video) return;
+
+  const FALLBACK_DURATION = 8;
+  const reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduceMotion) {
+    section.classList.add('no-scrub');
+    return;
+  }
+
+  const park = () => { try { video.pause(); } catch (e) {} };
+  video.addEventListener('play', park);
+  video.addEventListener('loadedmetadata', park);
+  park();
+
+  let duration = FALLBACK_DURATION;
+  const refreshDuration = () => {
+    if (isFinite(video.duration) && video.duration > 0) duration = video.duration;
+  };
+  video.addEventListener('loadedmetadata', refreshDuration);
+  video.addEventListener('durationchange', refreshDuration);
+  refreshDuration();
+
+  let ticking = false;
+  let lastT = -1;
+
+  function update() {
+    ticking = false;
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const scrubDistance = section.offsetHeight - vh;
+    if (scrubDistance <= 0) return;
+
+    let progress = (-rect.top) / scrubDistance;
+    if (progress < 0) progress = 0;
+    if (progress > 1) progress = 1;
+
+    const t = progress * duration;
+    if (Math.abs(t - lastT) > 0.02) {
+      lastT = t;
+      try { video.currentTime = t; } catch (e) {}
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  video.addEventListener('loadeddata', update);
+  update();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initScrollSyncedVideo);
+} else {
+  initScrollSyncedVideo();
+}
