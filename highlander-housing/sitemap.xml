@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://highlanderhousing.com/</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://highlanderhousing.com/listings.html</loc><lastmod>2026-06-22</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://highlanderhousing.com/subleases.html</loc><lastmod>2026-06-22</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://highlanderhousing.com/roommates.html</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://highlanderhousing.com/parents.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://highlanderhousing.com/housing.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://highlanderhousing.com/list-property.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://highlanderhousing.com/investors.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://highlanderhousing.com/vendors.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://highlanderhousing.com/resources.html</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://highlanderhousing.com/about.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://highlanderhousing.com/contact.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Core -->
+  <url><loc>https://highlanderhousing.com/</loc><lastmod>2026-06-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+
+  <!-- Student money pages (update often) -->
+  <url><loc>https://highlanderhousing.com/listings.html</loc><lastmod>2026-06-23</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://highlanderhousing.com/subleases.html</loc><lastmod>2026-06-23</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://highlanderhousing.com/roommates.html</loc><lastmod>2026-06-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Guide articles / content hub -->
+  <url><loc>https://highlanderhousing.com/ucr-housing-guide.html</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://highlanderhousing.com/best-areas-near-ucr.html</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://highlanderhousing.com/cost-of-ucr-housing.html</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://highlanderhousing.com/housing.html</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://highlanderhousing.com/resources.html</loc><lastmod>2026-06-23</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Parents -->
+  <url><loc>https://highlanderhousing.com/parents.html</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Owners & investors -->
+  <url><loc>https://highlanderhousing.com/list-property.html</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://highlanderhousing.com/investors.html</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://highlanderhousing.com/vendors.html</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Company -->
+  <url><loc>https://highlanderhousing.com/about.html</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://highlanderhousing.com/contact.html</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
 </urlset>
